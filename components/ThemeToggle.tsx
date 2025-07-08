@@ -9,8 +9,8 @@ export function ThemeToggle() {
 
   return (
     <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+    //   whileHover={{ scale: 1.05 }}
+    //   whileTap={{ scale: 0.95 }}
     >
       <Button
         variant="ghost"
@@ -20,7 +20,7 @@ export function ThemeToggle() {
       >
         <motion.div
           initial={false}
-          animate={{ rotate: theme === "dark" ? 180 : 0 }}
+          animate={{ rotate: theme === "dark" ? 270 : 0 }}
           transition={{ duration: 0.3 }}
         >
           {theme === "light" ? (

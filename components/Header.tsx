@@ -1,4 +1,5 @@
 
+"use client"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Menu, X, User, LogIn } from "lucide-react"
@@ -73,7 +74,7 @@ export function Header() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   onClick={() => openAuthModal("signup")}
-                  className="bg-gradient-to-r from-hsl(var(--portfolio-primary)) to-hsl(var(--portfolio-secondary)) hover:opacity-90"
+                  className="bg-gradient hover:bg-gradient hover:border-2 dark:text-white text-black "
                 >
                   <User className="h-4 w-4 mr-2" />
                   Sign Up
