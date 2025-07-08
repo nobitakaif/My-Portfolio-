@@ -1,5 +1,6 @@
 
 
+"use client"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, Mail, Lock, User, Eye, EyeOff } from "lucide-react"
@@ -48,7 +49,7 @@ export function AuthModal({ isOpen, onClose, initialMode = "signin" }: AuthModal
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ type: "spring", damping: 20, stiffness: 300 }}
-            className="glass max-w-md w-full p-8 rounded-2xl relative"
+            className="glass max-w-md w-full p-8 rounded-2xl relative dark:bg-black bg-white"
             onClick={(e) => e.stopPropagation()}
           >
             <Button
@@ -60,7 +61,7 @@ export function AuthModal({ isOpen, onClose, initialMode = "signin" }: AuthModal
               <X className="h-4 w-4" />
             </Button>
 
-            <div className="text-center mb-8">
+            <div className="text-center mb-8 ">
               <motion.h2
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -113,7 +114,7 @@ export function AuthModal({ isOpen, onClose, initialMode = "signin" }: AuthModal
                   Email Address
                 </Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                  <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground dark:text-white" />
                   <Input
                     id="email"
                     type="email"
@@ -163,7 +164,7 @@ export function AuthModal({ isOpen, onClose, initialMode = "signin" }: AuthModal
               >
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-hsl(var(--portfolio-primary)) to-hsl(var(--portfolio-secondary)) hover:opacity-90 transition-opacity"
+                  className="w-full bg-gradient-to-r from-hsl(var(--portfolio-primary)) to-hsl(var(--portfolio-secondary)) hover:opacity-90 transition-opacity dark:text-white text-black hover:text-white cursor-pointer dark:hover:text-black"
                 >
                   {mode === "signin" ? "Sign In" : "Create Account"}
                 </Button>
@@ -171,12 +172,12 @@ export function AuthModal({ isOpen, onClose, initialMode = "signin" }: AuthModal
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground ">
                 {mode === "signin" ? "Don't have an account?" : "Already have an account?"}
                 <button
                   type="button"
                   onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
-                  className="ml-1 text-hsl(var(--portfolio-primary)) hover:underline font-medium"
+                  className="ml-1 text-hsl(var(--portfolio-primary)) hover:underline font-medium cursor-pointer"
                 >
                   {mode === "signin" ? "Sign up" : "Sign in"}
                 </button>
