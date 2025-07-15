@@ -30,7 +30,7 @@ export function AboutSection() {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm a passionate developer who loves creating digital experiences that make a difference. 
+            I`&apos;`m a passionate developer who loves creating digital experiences that make a difference. 
             With expertise in modern web technologies and a keen eye for design.
           </p>
         </motion.div>
@@ -60,7 +60,7 @@ export function AboutSection() {
                 <h3 className="text-2xl font-bold">Performance Focused</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Fast, accessible, and optimized applications are not just nice-to-have features – they're essential. 
+                Fast, accessible, and optimized applications are not just nice-to-have features - they`&apos;`re essential. 
                 I build with performance and user experience as top priorities.
               </p>
             </div>

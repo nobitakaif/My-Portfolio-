@@ -70,7 +70,7 @@ export function HeroSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-lg text-muted-foreground mb-4"
           >
-            Hello, I'm
+            Hello, I`&apos;`m
           </motion.p>
 
           <motion.h1
