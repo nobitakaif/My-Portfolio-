@@ -1,7 +1,7 @@
 
 "use client"
 import { motion } from "framer-motion"
-import { Code, Palette, Zap, Users, Award, Coffee } from "lucide-react"
+import {  Palette, Zap } from "lucide-react"
 
 export function AboutSection() {
   const skills = [
