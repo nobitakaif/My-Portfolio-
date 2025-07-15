@@ -13,12 +13,8 @@ export function AboutSection() {
     { name: "GCP", level: 70, color: "from-purple-500 to-indigo-500" },
   ]
 
-  const stats = [
-    { icon: Code, number: "50+", label: "Projects Completed" },
-    { icon: Users, number: "25+", label: "Happy Clients" },
-    { icon: Award, number: "5+", label: "Years Experience" },
-    { icon: Coffee, number: "∞", label: "Cups of Coffee" },
-  ]
+  
+  
 
   return (
     <section  className="py-20 relative overflow-hidden">

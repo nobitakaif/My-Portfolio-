@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { ExternalLink, Github, ArrowRight } from "lucide-react"
+import { ExternalLink, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
