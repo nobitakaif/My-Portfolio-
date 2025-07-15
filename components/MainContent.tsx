@@ -79,7 +79,7 @@ export function HeroSection() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-6xl md:text-8xl font-bold mb-6 gradient-text"
           >
-            Alex Johnson
+            Mohd Kaif
           </motion.h1>
 
           <motion.div
@@ -143,7 +143,7 @@ export function HeroSection() {
             className="flex justify-center space-x-6 mb-16"
           >
             {[
-              { Icon: Github, href: "#", label: "GitHub" },
+              { Icon: Github, href: "htts://github.com/nobitakaif", label: "GitHub" },
               { Icon: Linkedin, href: "#", label: "LinkedIn" },
               { Icon: Mail, href: "#", label: "Email" },
             ].map(({ Icon, href, label }, index) => (

@@ -8,9 +8,9 @@ export function AboutSection() {
     { name: "React/Next.js", level: 95, color: "from-blue-500 to-cyan-500" },
     { name: "TypeScript", level: 90, color: "from-blue-600 to-blue-400" },
     { name: "Node.js", level: 85, color: "from-green-500 to-green-400" },
-    { name: "GCP", level: 80, color: "from-yellow-500 to-yellow-400" },
+    { name: "Docker", level: 80, color: "from-yellow-500 to-yellow-400" },
     { name: "UI/UX Design", level: 75, color: "from-pink-500 to-purple-500" },
-    { name: "Docker", level: 70, color: "from-purple-500 to-indigo-500" },
+    { name: "GCP", level: 70, color: "from-purple-500 to-indigo-500" },
   ]
 
   const stats = [
