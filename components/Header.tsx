@@ -6,8 +6,10 @@ import { Menu, X, User, LogIn } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "./ThemeToggle"
 import { AuthModal } from "./AuthModal"
+import { useSession } from "next-auth/react"
 
 export function Header() {
+  const user = useSession()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
   const [authMode, setAuthMode] = useState<"signin" | "signup">("signin")
@@ -61,25 +63,29 @@ export function Header() {
             {/* Desktop Actions */}
             <div className="hidden md:flex items-center space-x-4">
               <ThemeToggle />
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  variant="ghost"
-                  onClick={() => openAuthModal("signin")}
-                  className="glass hover:glow-effect"
-                >
-                  <LogIn className="h-4 w-4 mr-2" />
-                  Sign In
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  onClick={() => openAuthModal("signup")}
-                  className="bg-gradient hover:bg-gradient hover:border-2 dark:text-white text-black "
-                >
-                  <User className="h-4 w-4 mr-2" />
-                  Sign Up
-                </Button>
-              </motion.div>
+              {user.status == "authenticated" ? "hii user":<div>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button
+                      variant="ghost"
+                      onClick={() => openAuthModal("signin")}
+                      className="glass hover:glow-effect"
+                    >
+                      <LogIn className="h-4 w-4 mr-2" />
+                      Sign In
+                    </Button>
+                  </motion.div>
+
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button
+                      onClick={() => openAuthModal("signup")}
+                      className="bg-gradient hover:bg-gradient hover:border-2 dark:text-white text-black "
+                    >
+                      <User className="h-4 w-4 mr-2" />
+                      Sign Up
+                    </Button>
+                  </motion.div>
+                </div>
+              }
             </div>
 
             {/* Mobile Menu Button */}

@@ -7,6 +7,8 @@ import { X, Mail, Lock, User, Eye, EyeOff } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { FcGoogle } from "react-icons/fc";
+import { useRouter } from "next/navigation"
 
 interface AuthModalProps {
   isOpen: boolean
@@ -16,6 +18,7 @@ interface AuthModalProps {
 
 export function AuthModal({ isOpen, onClose, initialMode = "signin" }: AuthModalProps) {
   const [mode, setMode] = useState<"signin" | "signup">(initialMode)
+  const router = useRouter()
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
@@ -170,7 +173,19 @@ export function AuthModal({ isOpen, onClose, initialMode = "signin" }: AuthModal
                 </Button>
               </motion.div>
             </form>
-
+            
+            <motion.div>
+                <Button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-hsl(var(--portfolio-primary)) to-hsl(var(--portfolio-secondary)) hover:opacity-90 transition-opacity dark:text-white text-black hover:text-white cursor-pointer dark:hover:text-black"
+                  onClick={()=>{
+                    router.push("/api/auth/signin")
+                  }}
+                >
+                  <FcGoogle/>
+                  Log in With Google
+                </Button>
+              </motion.div>
             <div className="mt-6 text-center">
               <p className="text-sm text-muted-foreground ">
                 {mode === "signin" ? "Don't have an account?" : "Already have an account?"}
