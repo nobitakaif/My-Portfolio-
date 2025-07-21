@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { toast } from "sonner"
 
 export function HeroSection() {
   const floatingElements = [
@@ -118,8 +119,11 @@ export function HeroSection() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
-                className="bg-gradient hover:bg-gradient dark:text-white text-black px-8 py-3 text-lg pulse-glow"
+                className="bg-gradient hover:bg-gradient dark:text-white text-black px-8 py-3 text-lg pulse-glow cursor-pointer"
                 variant={"outline"}
+                onClick={()=>{
+                  toast.message("We'll add this soon!")
+                }}
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Get In Touch
@@ -129,7 +133,7 @@ export function HeroSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="glass border-white/20 hover:glow-effect px-8 py-3 text-lg"
+                className="glass border-white/20 hover:glow-effect px-8 py-3 text-lg cursor-pointer"
               >
                 <Download className="mr-2 h-5 w-5" />
                 <a href="/kaif.pdf" download>
