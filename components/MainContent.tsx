@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function HeroSection() {
   const floatingElements = [
@@ -131,12 +132,14 @@ export function HeroSection() {
                 className="glass border-white/20 hover:glow-effect px-8 py-3 text-lg"
               >
                 <Download className="mr-2 h-5 w-5" />
-                Download CV
+                <a href="/kaif.pdf" download>
+                  Download CV
+                </a>
               </Button>
             </motion.div>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.6 }}
@@ -161,6 +164,34 @@ export function HeroSection() {
                 <span className="sr-only">{label}</span>
               </motion.a>
             ))}
+          </motion.div> */}
+          <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="flex justify-center space-x-6 mb-16 gap-4"
+            >
+            {[
+              { Icon: Github, href: "https://github.com/nobitakaif", label: "GitHub" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/mohd-kaif-87282a210/", label: "LinkedIn" },
+              { Icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=mk2818356@gmail.com&su=Hello, Kaif&body=I%20saw%20your%20portfolio%20and%20wanted%20to%20reach%20out!" ,label: "Email" },
+            ].map(({ Icon, href, label},index ) => (
+          <Link href={href} target="_blank" key={label}>
+            <motion.div
+              tabIndex={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="flex justify-center space-x-6 mb-16 flex-row"
+              whileHover={{ scale: 1.2, y: -5 }}
+              whileTap={{ scale: 0.9 }}
+              
+            >
+              <Icon/>
+              
+            </motion.div>
+          </Link>)
+          )}
           </motion.div>
         </motion.div>
 
