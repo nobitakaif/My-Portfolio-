@@ -44,7 +44,7 @@ export function Header() {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden flex items-center space-x-8">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
