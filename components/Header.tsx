@@ -44,7 +44,7 @@ export function Header() {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-8">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
@@ -61,7 +61,7 @@ export function Header() {
             </nav>
 
             {/* Desktop Actions */}
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden flex items-center space-x-4">
               <ThemeToggle />
               {user.status == "authenticated" ? "hii user":<div>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
