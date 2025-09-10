@@ -1,10 +1,9 @@
 
 "use client"
 import { motion } from "framer-motion"
-import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react"
+import { ArrowDown, Github, Linkedin, Mail, Download, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { toast } from "sonner"
 
 export function HeroSection() {
   const floatingElements = [
@@ -72,7 +71,7 @@ export function HeroSection() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-lg text-muted-foreground mb-4"
           >
-            Hello, I`&apos;`m
+            Hello, I&apos;m
           </motion.p>
 
           <motion.h1
@@ -117,18 +116,24 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                size="lg"
-                className="bg-gradient hover:bg-gradient dark:text-white text-black px-8 py-3 text-lg pulse-glow cursor-pointer"
-                variant={"outline"}
-                onClick={()=>{
-                  toast.message("We'll add this soon!")
-                }}
-              >
-                <Mail className="mr-2 h-5 w-5" />
-                Get In Touch
-              </Button>
+              <Link
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=mk2818356@gmail.com&su=Hello&body=Hi, I saw your portfolio and..."
+                target="_blank"
+                rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="bg-gradient hover:bg-gradient dark:text-white text-black px-8 py-3 text-lg pulse-glow cursor-pointer"
+                  variant={"outline"}
+                  onClick={()=>{
+                    // router.push("https://mailto:mk2818356@gmail.com?subject=Hello&body=Hi, I saw your portfolio and...")
+                  }}
+                >
+                  <Mail className="mr-2 h-5 w-5" />
+                    Get in touch 
+                </Button>
+              </Link>
             </motion.div>
+
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="outline"
@@ -178,7 +183,7 @@ export function HeroSection() {
             {[
               { Icon: Github, href: "https://github.com/nobitakaif", label: "GitHub" },
               { Icon: Linkedin, href: "https://www.linkedin.com/in/mohd-kaif-87282a210/", label: "LinkedIn" },
-              { Icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=mk2818356@gmail.com&su=Hello, Kaif&body=I%20saw%20your%20portfolio%20and%20wanted%20to%20reach%20out!" ,label: "Email" },
+              { Icon: X, href: "https://x.com/_Kaif_00" ,label: "Email" },
             ].map(({ Icon, href, label},index ) => (
           <Link href={href} target="_blank" key={label}>
             <motion.div

@@ -61,14 +61,17 @@ export function Header() {
             </nav>
 
             {/* Desktop Actions */}
-            <div className="hidden flex items-center space-x-4">
+
+            <div className=" flex items-center space-x-4">
               <ThemeToggle />
-              {user.status == "authenticated" ? "hii user":<div>
+             
+              <ThemeToggle  />
+              {user.status == "authenticated" ? "hii user":<div className="flex gap-2">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button
                       variant="ghost"
                       onClick={() => openAuthModal("signin")}
-                      className="glass hover:glow-effect"
+                      className="glass hover:glow-effect cursor-pointer"
                     >
                       <LogIn className="h-4 w-4 mr-2" />
                       Sign In
@@ -78,7 +81,7 @@ export function Header() {
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button
                       onClick={() => openAuthModal("signup")}
-                      className="bg-gradient hover:bg-gradient hover:border-2 dark:text-white text-black "
+                      className="bg-gradient hover:bg-gradient hover:border-2 dark:text-white text-black cursor-pointer "
                     >
                       <User className="h-4 w-4 mr-2" />
                       Sign Up

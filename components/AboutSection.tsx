@@ -30,7 +30,7 @@ export function AboutSection() {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I`&apos;`m a passionate developer who loves creating digital experiences that make a difference. 
+            I&apos;m a passionate developer who loves creating digital experiences that make a difference. 
             With expertise in modern web technologies and a keen eye for design.
           </p>
         </motion.div>

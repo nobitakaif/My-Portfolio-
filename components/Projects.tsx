@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { ExternalLink, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
 
 export function ProjectsSection() {
   const projects = [
@@ -68,7 +69,7 @@ export function ProjectsSection() {
                 <div className="glass rounded-2xl overflow-hidden hover:glow-effect transition-all duration-300">
                   <div className="aspect-video bg-gradient-to-br from-hsl(var(--portfolio-primary))/20 to-hsl(var(--portfolio-secondary))/20 flex items-center justify-center">
                     <div className="text-6xl opacity-50">
-                        <img src={"C:\Users\mk281\Desktop\own project\portfolio\public\file.svg"}/>
+                        <Image src={"C:\Users\mk281\Desktop\own project\portfolio\public\file.svg"} alt="uptime"/>
                     </div>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">

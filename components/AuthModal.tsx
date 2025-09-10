@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { FcGoogle } from "react-icons/fc";
-import { useRouter } from "next/navigation"
+
+import { toast } from "sonner"
 
 interface AuthModalProps {
   isOpen: boolean
@@ -17,8 +18,9 @@ interface AuthModalProps {
 }
 
 export function AuthModal({ isOpen, onClose, initialMode = "signin" }: AuthModalProps) {
+  
   const [mode, setMode] = useState<"signin" | "signup">(initialMode)
-  const router = useRouter()
+  
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
@@ -179,7 +181,8 @@ export function AuthModal({ isOpen, onClose, initialMode = "signin" }: AuthModal
                   type="submit"
                   className="w-full bg-gradient-to-r from-hsl(var(--portfolio-primary)) to-hsl(var(--portfolio-secondary)) hover:opacity-90 transition-opacity dark:text-white text-black hover:text-white cursor-pointer dark:hover:text-black"
                   onClick={()=>{
-                    router.push("/api/auth/signin")
+                    toast.message("we will add this soon!")
+                    // router.push("/api/auth/signin")
                   }}
                 >
                   <FcGoogle/>

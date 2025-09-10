@@ -16,7 +16,7 @@ export function ThemeToggle() {
         variant="ghost"
         size="icon"
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        className="glass hover:glow-effect transition-all duration-300"
+        className="glass hover:glow-effect transition-all duration-300 cursor-pointer"
       >
         <motion.div
           initial={false}
