@@ -62,10 +62,8 @@ export function Header() {
 
             {/* Desktop Actions */}
 
-            <div className=" flex items-center space-x-4">
-              <ThemeToggle />
-             
-              <ThemeToggle  />
+            <div className=" flex items-center space-x-4">             
+             <ThemeToggle  />
               {user.status == "authenticated" ? "hii user":<div className="flex gap-2">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button
