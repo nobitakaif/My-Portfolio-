@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "./ThemeToggle"
 import { AuthModal } from "./AuthModal"
 import { useSession } from "next-auth/react"
+import {Link} from "react-scroll"
 
 export function Header() {
   const user = useSession()
@@ -44,19 +45,24 @@ export function Header() {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-8 lg:ml-32">
               {navItems.map((item, index) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  initial={{ y: -20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="text-foreground hover:text-hsl(var(--portfolio-primary)) transition-colors duration-300 font-medium"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  {item.name}
-                </motion.a>
+                  <motion.div
+                      key={item.name}
+                      initial={{ y: -20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                    <Link
+                      to={item.href.replace("#", "")} 
+                      smooth={true}
+                      duration={10}
+                      className="text-foreground hover:text-hsl(var(--portfolio-primary)) transition-colors duration-300 font-medium cursor-pointer"
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
               ))}
             </nav>
 

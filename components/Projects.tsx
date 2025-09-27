@@ -19,7 +19,7 @@ export function ProjectsSection() {
     {
       title: "Quizify",
       description: "Quizify website for preparation for last time exam it helps you prepare your exam at the last moment and ask you question related to your topic .",
-      image: "/placeholder.svg",
+      image: "/#",
       tags: ["Next.js", "Node.js", "PostgreSQL", "Gemini AI"],
       github: "#",
       demo: "#",
@@ -31,7 +31,7 @@ export function ProjectsSection() {
   // const otherProjects = projects.filter(p => !p.featured)
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" id="projects">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -69,7 +69,7 @@ export function ProjectsSection() {
                 <div className="glass rounded-2xl overflow-hidden hover:glow-effect transition-all duration-300">
                   <div className="aspect-video bg-gradient-to-br from-hsl(var(--portfolio-primary))/20 to-hsl(var(--portfolio-secondary))/20 flex items-center justify-center">
                     <div className="text-6xl opacity-50">
-                        <Image src={"C:\Users\mk281\Desktop\own project\portfolio\public\file.svg"} alt="uptime"/>
+                        <Image src={"C:\Users\mk281\Desktop\own project\portfolio\public\file.svg"} alt="uptime" width={50} height={50}/>
                     </div>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
@@ -123,7 +123,7 @@ export function ProjectsSection() {
                     </Button>
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button className="bg-gradient-to-r from-hsl(var(--portfolio-primary)) to-hsl(var(--portfolio-secondary)) hover:opacity-90">
+                    <Button className="bg-gradient-to-r from-hsl(var(--portfolio-primary)) to-hsl(var(--portfolio-secondary)) dark:hover:text-black dark:text-white text-black hover:text-white cursor-pointer">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Live Demo
                     </Button>
